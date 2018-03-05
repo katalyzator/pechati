@@ -29,13 +29,13 @@
             <div class="uk-container">
                 <nav class="uk-navbar">
                     <div class="uk-navbar-left">
-                        <div class="logo-block uk-flex uk-flex-middle"><a class="logo-wrap" href="index.html"></a><img
+                        <div class="logo-block uk-flex uk-flex-middle"><a class="logo-wrap" href="{% url 'index_view' %}"></a><img
                                 class="logo" src="{% static 'img/png/simple.png' %}" alt=""><span>Компания</span></div>
                     </div>
                     <div class="uk-navbar-right">
                         <ul class="uk-navbar-nav">
                             <li><a href="{% url 'index_view' %}">Главная</a></li>
-                            <li><a href="goods.html">Товары</a></li>
+                            <li><a href="{% url 'products' %}">Товары</a></li>
                             <li><a href="{% url 'contacts_view' %}">Контакты</a></li>
                         </ul>
                     </div>
@@ -45,7 +45,8 @@
     </div>
     <div uk-sticky="sel-target: .mob-navbar; cls-active: uk-navbar-sticky">
         <nav class="uk-navbar uk-navbar-container uk-hidden@s mob-navbar">
-            <div class="uk-navbar-left"><a href="index.html"><img src="{% static 'img/png/simple.png' %}" alt="Logo" width="40"
+            <div class="uk-navbar-left"><a href="{% url 'index_view' %}"><img src="{% static 'img/png/simple.png' %}" alt="Logo"
+                                                                  width="40"
                                                                   style="margin-left: 20px;"></a></div>
             <div class="uk-navbar-right">
                 <button class="uk-navbar-toggle-icon uk-icon mob-menu-button" type="button" uk-navbar-toggle-icon=""
@@ -53,9 +54,9 @@
                 <div uk-drop="mode: click; pos: center">
                     <div class="uk-card uk-card-default">
                         <ul class="uk-navbar-nav">
-                            <li><a href="index.html">Главная</a></li>
-                            <li><a href="goods.html">Товары</a></li>
-                            <li><a href="contacts.html">Контакты</a></li>
+                            <li><a href="{% url 'index_view' %}">Главная</a></li>
+                            <li><a href="{% url 'products' %}">Товары</a></li>
+                            <li><a href="{% url 'contacts_view' %}">Контакты</a></li>
                         </ul>
                     </div>
                 </div>

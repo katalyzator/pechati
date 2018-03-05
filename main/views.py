@@ -19,3 +19,10 @@ def contacts_view(request):
     template = 'contacts.html'
 
     return render(request, template, context)
+
+
+def goods_view(request):
+    context = {}
+    template = 'goods.html'
+
+    return render(request, template, context)
