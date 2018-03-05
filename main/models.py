@@ -15,3 +15,20 @@ class SliderImage(models.Model):
 
     def __unicode__(self):
         return smart_unicode(self.title)
+
+
+class Product(models.Model):
+    title = models.CharField(max_length=255, verbose_name='Название')
+    description = models.TextField(verbose_name='Описание товара')
+    image = models.ImageField(upload_to='images/products', verbose_name='Картинка')
+    price = models.CharField(max_length=255, verbose_name='Цена')
+
+    timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+
+    class Meta:
+        verbose_name_plural = 'Продукты'
+        verbose_name = 'Продукт'
+
+    def __unicode__(self):
+        return smart_unicode(self.title)
