@@ -7,81 +7,22 @@
         <div class="uk-container">
             <h2 class="section-heading">Товары</h2>
             <div class="uk-grid category-grid uk-grid-match uk-child-width-1-4@l uk-child-width-1-3@m uk-child-width-1-2@s uk-child-width-1-1">
-                <div>
-                    <div class="category-item">
-                        <div class="uk-cover-container img-cover"><img src="img/png/shirt.png" alt="" uk-cover=""></div>
-                        <a class="item-heading" href="">Футболка Adidas</a>
-                        <p class="desc">Размер 30 </p>
-                        <div class="price"><span>3500 сом	</span></div>
-                        <a class="see-item" href="#modal-call" uk-toggle="">Заказать</a>
+                {% for item in products %}
+                    <div>
+                        <div class="category-item">
+                            <div class="uk-cover-container img-cover"><img src="{{ item.image.url }}" alt=""
+                                                                           uk-cover="">
+                            </div>
+                            <a class="item-heading" href="">{{ item.title }}</a>
+                            <p class="desc">{{ item.description }}</p>
+                            <div class="price"><span>{{ item.price }} Руб</span></div>
+                            <a class="see-item" href="#modal-call" uk-toggle="">Заказать</a>
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <div class="category-item">
-                        <div class="uk-cover-container img-cover"><img src="img/png/shirt.png" alt="" uk-cover=""></div>
-                        <a class="item-heading" href="">Футболка Adidas</a>
-                        <p class="desc">Размер 30 </p>
-                        <div class="price"><span>3500 сом	</span></div>
-                        <a class="see-item" href="#modal-call" uk-toggle="">Заказать</a>
-                    </div>
-                </div>
-                <div>
-                    <div class="category-item">
-                        <div class="uk-cover-container img-cover"><img src="img/png/shirt.png" alt="" uk-cover=""></div>
-                        <a class="item-heading" href="">Футболка Adidas</a>
-                        <p class="desc">Размер 30 </p>
-                        <div class="price"><span>3500 сом	</span></div>
-                        <a class="see-item" href="#modal-call" uk-toggle="">Заказать</a>
-                    </div>
-                </div>
-                <div>
-                    <div class="category-item">
-                        <div class="uk-cover-container img-cover"><img src="img/png/shirt.png" alt="" uk-cover=""></div>
-                        <a class="item-heading" href="">Футболка Adidas</a>
-                        <p class="desc">Размер 30 </p>
-                        <div class="price"><span>3500 сом	</span></div>
-                        <a class="see-item" href="#modal-call" uk-toggle="">Заказать</a>
-                    </div>
-                </div>
-                <div>
-                    <div class="category-item">
-                        <div class="uk-cover-container img-cover"><img src="img/png/shirt.png" alt="" uk-cover=""></div>
-                        <a class="item-heading" href="">Футболка Adidas</a>
-                        <p class="desc">Размер 30 </p>
-                        <div class="price"><span>3500 сом	</span></div>
-                        <a class="see-item" href="#modal-call" uk-toggle="">Заказать</a>
-                    </div>
-                </div>
-                <div>
-                    <div class="category-item">
-                        <div class="uk-cover-container img-cover"><img src="img/png/shirt.png" alt="" uk-cover=""></div>
-                        <a class="item-heading" href="">Футболка Adidas</a>
-                        <p class="desc">Размер 30 </p>
-                        <div class="price"><span>3500 сом	</span></div>
-                        <a class="see-item" href="#modal-call" uk-toggle="">Заказать</a>
-                    </div>
-                </div>
-                <div>
-                    <div class="category-item">
-                        <div class="uk-cover-container img-cover"><img src="img/png/shirt.png" alt="" uk-cover=""></div>
-                        <a class="item-heading" href="">Футболка Adidas</a>
-                        <p class="desc">Размер 30 </p>
-                        <div class="price"><span>3500 сом	</span></div>
-                        <a class="see-item" href="#modal-call" uk-toggle="">Заказать</a>
-                    </div>
-                </div>
-                <div>
-                    <div class="category-item">
-                        <div class="uk-cover-container img-cover"><img src="img/png/shirt.png" alt="" uk-cover=""></div>
-                        <a class="item-heading" href="">Футболка Adidas</a>
-                        <p class="desc">Размер 30 </p>
-                        <div class="price"><span>3500 сом	</span></div>
-                        <a class="see-item" href="#modal-call" uk-toggle="">Заказать</a>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
-        <a class="show-more" href="">Показать больше</a>
+{#        <a class="show-more" href="">Показать больше</a>#}
     </div>
 {% endblock %}
 

@@ -24,7 +24,8 @@ def contacts_view(request):
 
 
 def goods_view(request):
-    context = {}
+    products = Product.objects.all()
+    context = {"products": products}
     template = 'goods.html'
 
     return render(request, template, context)
