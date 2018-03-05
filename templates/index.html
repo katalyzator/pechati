@@ -30,7 +30,7 @@
                                                                                alt=""
                                                                                uk-cover="">
                                 </div>
-                                <a class="item-heading" href="item.html">{{ product.title }}</a>
+                                <a class="item-heading" href="{% url 'single_product' id=product.id %}">{{ product.title }}</a>
                                 <p class="desc">{{ product.description }}</p>
                                 <div class="price"><span>{{ product.price }} руб.</span></div>
                                 <a class="see-item" href="#modal-call" uk-toggle="">Заказать</a>

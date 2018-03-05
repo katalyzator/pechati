@@ -32,3 +32,21 @@ class Product(models.Model):
 
     def __unicode__(self):
         return smart_unicode(self.title)
+
+
+class Application(models.Model):
+    name = models.CharField(max_length=255, verbose_name='Имя', blank=True, null=True)
+    surname = models.CharField(max_length=255, verbose_name='Фамилия', blank=True, null=True)
+    phone = models.CharField(max_length=255, verbose_name='Номер телефона')
+    email = models.EmailField(verbose_name='E-mail')
+    text = models.TextField(verbose_name='Text')
+
+    timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+
+    class Meta:
+        verbose_name_plural = 'Заявки с сайта'
+        verbose_name = 'Заявка'
+
+    def __unicode__(self):
+        return smart_unicode(self.phone)

@@ -13,7 +13,7 @@
                             <div class="uk-cover-container img-cover"><img src="{{ item.image.url }}" alt=""
                                                                            uk-cover="">
                             </div>
-                            <a class="item-heading" href="">{{ item.title }}</a>
+                            <a class="item-heading" href="{% url 'single_product' id=item.id %}">{{ item.title }}</a>
                             <p class="desc">{{ item.description }}</p>
                             <div class="price"><span>{{ item.price }} Руб</span></div>
                             <a class="see-item" href="#modal-call" uk-toggle="">Заказать</a>
@@ -22,7 +22,7 @@
                 {% endfor %}
             </div>
         </div>
-{#        <a class="show-more" href="">Показать больше</a>#}
+        {#        <a class="show-more" href="">Показать больше</a>#}
     </div>
 {% endblock %}
 

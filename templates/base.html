@@ -109,17 +109,13 @@
 </head>
 <body>
 <div id="modal-call" uk-modal="">
-    <div class="uk-modal-dialog uk-modal-body pop-up-body">
+    <div class="uk-modal-dialog uk-modal-body pop-up-body modal-form">
         <h2 class="text-heading">Закажите</h2>
-        <form>
-            <div class="uk-alert-success" uk-alert=""><a class="uk-alert-close" uk-close=""></a>
-                <h2>Форма отправлена</h2>
-                <p>Спасибо</p>
-            </div>
-            <input class="uk-input modal-input" type="text" placeholder="Имя" required>
-            <input class="uk-input phoneUnique modal-input" type="" placeholder="Телефон" required>
-            <input class="uk-input modal-input" type="email" placeholder="E-mail" required>
-            <button class="uk-button modal-input modal-button" type="button">Отправить</button>
+        <form action="{% url 'application' %}" method="POST" class="application-form">
+            <input class="uk-input modal-input" type="text" placeholder="Имя" id="name">
+            <input class="uk-input phoneUnique modal-input" type="" placeholder="Телефон" id="phone" required>
+            <input class="uk-input modal-input" type="email" placeholder="E-mail" id="email" required>
+            <input class="uk-button modal-input modal-button" type="submit">Отправить</input>
         </form>
         <button class="uk-modal-close-outside" type="button" uk-close=""></button>
     </div>
@@ -135,5 +131,29 @@
 {% block scripts %}
 
 {% endblock %}
+
+<script>
+    $('.application-form').on('submit', function (e) {
+        e.preventDefault();
+        var that = this;
+
+        $.ajax({
+            url: $(that).attr('action'),
+            method: 'POST',
+            datatype: 'JSON',
+            data: {
+                'name': $('#name').val(),
+                'phone': $('#phone').val(),
+                'email': $('#email').val()
+            },
+            success: function (response) {
+                alert('Заявка отправлена!');
+                $('.application-form')[0].reset(0);
+            }
+
+        })
+    })
+
+</script>
 </body>
 </html>
