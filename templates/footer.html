@@ -1,101 +1,50 @@
 {% load staticfiles %}
 
 <footer>
-    <div class="footer_top footer-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 col-sm-6">
-                    <div class="newsletter">
-                        <h4>Sign up for newSletter</h4>
-                    </div>
+    <div class="uk-container">
+        <div class="uk-grid uk-child-width-1-1 footer-icon-grid uk-child-width-1-4@l uk-child-width-1-2@s">
+            <div class="uk-padding-remove">
+                <div class="grid-item uk-flex uk-flex-middle">
+                    <div class="icon-wrapper"><img src="{% static 'img/png/phone.png' %}" alt="Phone"></div>
+                    <div class="phone-block"><a href="tel:+996555555555" target="_blank">+996 (555) 50 50 50</a></div>
                 </div>
-                <div class="col-sm-12 col-sm-6">
-                    <div class="newsletter text-right">
-                        <input class="news_input" type="text" value="" placeholder="Email Address"/>
-                        <input class="subscribe_btn" type="button" value="subscribe"/>
-                    </div>
+            </div>
+            <div class="uk-padding-remove">
+                <div class="grid-item uk-flex uk-flex-middle">
+                    <div class="icon-wrapper"><img src="{% static 'img/png/mail.png' %}" alt="Mail"></div>
+                    <a href="mailto:company@info.com" target="_blank">company@info.com</a>
+                </div>
+            </div>
+            <div class="uk-padding-remove">
+                <div class="grid-item uk-flex uk-flex-middle">
+                    <div class="icon-wrapper"><img src="{% static 'img/png/loc.png' %}" alt="Location"></div>
+                    <a href="" target="_blank">г.Бишкек,<br>Московская</a>
+                </div>
+            </div>
+            <div class="uk-padding-remove">
+                <div class="grid-item uk-flex uk-flex-middle no-border">
+                    <div class="icon-wrapper"><img src="{% static 'img/png/map.png' %}" alt="Map"></div>
+                    <a href="" target="_blank">Показать офис на карте</a>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="footer_middel footer-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6 col-md-3">
-                    <div class="footer_link address">
-                        <p>Elixir fashion</p>
-                        <ul>
-                            <li><span>Addresss: </span>ipsum 125 Pall Mall, London, England</li>
-                            <li><span>Phone: </span>(0123) 345 6789</li>
-                            <li><span>Email: </span>info@domain.com</li>
-                        </ul>
-                    </div>
-                    <div class="footer_icon">
-                        <ul>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-3">
-                    <div class="footer_link">
-                        <p>My account</p>
-                        <ul>
-                            <li><a href="#">My Account</a></li>
-                            <li><a href="cart.html">Shopping Cart</a></li>
-                            <li><a href="#">My Wishlist</a></li>
-                            <li><a href="#">My Credit Slip</a></li>
-                            <li><a href="#">Account Information</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-3">
-                    <div class="footer_link res_mar">
-                        <p>customer support</p>
-                        <ul>
-                            <li><a href="#">7/24 Hour Support</a></li>
-                            <li><a href="#">Refound Policy</a></li>
-                            <li><a href="#">Shipping Guide</a></li>
-                            <li><a href="#">International Shipping</a></li>
-                            <li><a href="#">Career</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-3">
-                    <div class="footer_link res_mar">
-                        <p>information</p>
-                        <ul>
-                            <li><a href="#">About Our Shop</a></li>
-                            <li><a href="#">Secure Shopping</a></li>
-                            <li><a href="#">Delivery Information</a></li>
-                            <li><a href="#">Company Site Map</a></li>
-                            <li><a href="#">Privecy Policy</a></li>
-                        </ul>
-                    </div>
-                </div>
+        <div class="uk-navbar-nav bottom-navbar">
+            <div class="uk-navbar-left">
+                <ul class="uk-navbar-nav">
+                    <li><a class="footer-link" href="index.html">Главная</a></li>
+                    <li><a class="footer-link" href="goods.html">Товары</a></li>
+                    <li><a class="footer-link" href="contacts.html">Контакты</a></li>
+                </ul>
+            </div>
+            <div class="uk-navbar-right">
+                <ul class="uk-navbar-nav">
+                    <li><a class="icon-link" href=""><i class="zmdi zmdi-facebook"></i></a></li>
+                    <li><a class="icon-link" href=""><i class="zmdi zmdi-instagram"></i></a></li>
+                    <li><a class="icon-link" href=""><i class="zmdi zmdi-vk"></i></a></li>
+                </ul>
             </div>
         </div>
+        <div class="copyright">© 2018 OCOО "Company"</div>
     </div>
-    <div class="footer_bottom footer-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6 col-xs-12">
-                    <div class="copyright">
-                        <p>Copyright 2015 <a href="http://designscrazed.org/">Allie</a> All rights reserved</p>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-xs-12">
-                    <div class="copyright_icon text-right">
-                        <a href="#"><img src="{% static 'images/footer/paypal-1.png' %}" alt=""/></a>
-                        <a href="#"><img src="{% static 'images/footer/paypal-2.png' %}" alt=""/></a>
-                        <a href="#"><img src="{% static 'images/footer/paypal-3.png' %}" alt=""/></a>
-                        <a href="#"><img src="{% static 'images/footer/paypal-4.png' %}" alt=""/></a>
-                        <a href="#"><img src="{% static 'images/footer/paypal-5.png' %}" alt=""/></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
 </footer>

@@ -1,64 +1,65 @@
 {% load staticfiles %}
 
 <header>
-    <div class="container">
-        <div class="header_top">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="header_top_left float-left">
-                        <ul class="social_icon">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        </ul>
-                        <ul class="social_others">
-                            <li><a><i class="fa fa-phone"></i>+8801711223344</a></li>
-                            <li><a href="#"><i class="fa fa-envelope-o"></i>support@domain.com</a></li>
+    <div class="top-line uk-visible@s">
+        <div class="uk-navbar-container">
+            <div class="uk-container">
+                <nav class="uk-navbar">
+                    <div class="uk-navbar-left">
+                        <ul class="uk-navbar-nav">
+                            <li><a class="top-line-link" href="mailto:company@info.com" target="_blank">
+                                <i class="zmdi zmdi-email"></i>company@info.com</a></li>
+                            <li><a class="top-line-link" href="tel" target="_blank">
+                                <i class="zmdi zmdi-phone"></i>+996 550 50 50 50</a></li>
                         </ul>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="header_top_right text-right">
-                        <ul>
-                            <li class="searchbox">
-                                <input type="search" placeholder="Search......" name="search" class="searchbox-input"
-                                       onkeyup="buttonUp();" required>
-                                <input type="submit" class="searchbox-submit" value="">
-                                <span class="searchbox-icon"><i class="fa fa-search"></i></span>
-                            </li>
+                    <div class="uk-navbar-right">
+                        <ul class="uk-navbar-nav">
+                            <li><a class="top-line-link" href=""><i class="zmdi zmdi-facebook"></i></a></li>
+                            <li><a class="top-line-link" href=""><i class="zmdi zmdi-instagram"></i></a></li>
+                            <li><a class="top-line-link" href=""><i class="zmdi zmdi-vk"></i> </a></li>
                         </ul>
                     </div>
-                </div>
+                </nav>
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="row mega_relative">
-            <div class="col-xs-12 col-sm-2">
-                <div class="logo head_lo">
-                    <a href="index.html"><img src="{% static 'images/logo.png' %}" alt="Logo"/></a>
-                </div>
-            </div>
-            <div class="col-sm-10">
-                <div class="mainmenu float-right">
-                    <nav>
-                        <ul>
+    <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+        <div class="uk-navbar-container main-header uk-visible@s">
+            <div class="uk-container">
+                <nav class="uk-navbar">
+                    <div class="uk-navbar-left">
+                        <div class="logo-block uk-flex uk-flex-middle"><a class="logo-wrap" href="index.html"></a><img
+                                class="logo" src="{% static 'img/png/simple.png' %}" alt=""><span>Компания</span></div>
+                    </div>
+                    <div class="uk-navbar-right">
+                        <ul class="uk-navbar-nav">
                             <li><a href="{% url 'index_view' %}">Главная</a></li>
-                            <li><a href="#"><i>NEW</i></a></li>
-                            <li><a href="#">FEATURED</a></li>
-                            {#                            <li><a href="#">BLOG</a></li>#}
-                            {#                            <li><a href="#">BRAND</a></li>#}
-                            {#                            <li><a href="#">OFFERS</a></li>#}
+                            <li><a href="goods.html">Товары</a></li>
                             <li><a href="{% url 'contacts_view' %}">Контакты</a></li>
-                            <li class="shop_icon">
-                                <a href="checkout.html"><img src="{% static 'images/menu_icon_img.png' %}" alt=""/></a>
-                                <span>10</span>
-                            </li>
                         </ul>
-                    </nav>
-                </div>
+                    </div>
+                </nav>
             </div>
         </div>
+    </div>
+    <div uk-sticky="sel-target: .mob-navbar; cls-active: uk-navbar-sticky">
+        <nav class="uk-navbar uk-navbar-container uk-hidden@s mob-navbar">
+            <div class="uk-navbar-left"><a href="index.html"><img src="{% static 'img/png/simple.png' %}" alt="Logo" width="40"
+                                                                  style="margin-left: 20px;"></a></div>
+            <div class="uk-navbar-right">
+                <button class="uk-navbar-toggle-icon uk-icon mob-menu-button" type="button" uk-navbar-toggle-icon=""
+                        uk-toggle=""></button>
+                <div uk-drop="mode: click; pos: center">
+                    <div class="uk-card uk-card-default">
+                        <ul class="uk-navbar-nav">
+                            <li><a href="index.html">Главная</a></li>
+                            <li><a href="goods.html">Товары</a></li>
+                            <li><a href="contacts.html">Контакты</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
     </div>
 </header>

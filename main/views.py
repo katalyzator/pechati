@@ -16,6 +16,6 @@ def index_view(request):
 
 def contacts_view(request):
     context = {}
-    template = 'contact.html'
+    template = 'contacts.html'
 
     return render(request, template, context)
