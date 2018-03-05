@@ -3,12 +3,14 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render
 
-from main.models import SliderImage
+from main.models import SliderImage, Product
 
 
 def index_view(request):
     sliders = SliderImage.objects.all()
-    context = {"sliders": sliders}
+    products = Product.objects.all()[:8]
+
+    context = {"sliders": sliders, "products": products}
     template = 'index.html'
 
     return render(request, template, context)

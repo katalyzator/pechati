@@ -13,3 +13,5 @@ class ProductAdmin(admin.ModelAdmin):
 
     class Meta:
         model = Product
+
+admin.site.register(Product, ProductAdmin)
