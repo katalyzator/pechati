@@ -5,14 +5,16 @@ from django.http import JsonResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 
-from main.models import SliderImage, Product, Application
+from main.models import SliderImage, Product, Application, Review, Advantage
 
 
 def index_view(request):
     sliders = SliderImage.objects.all()
     products = Product.objects.all()[:8]
+    reviews = Review.objects.all()
+    advantage = Advantage.objects.all()[:3]
 
-    context = {"sliders": sliders, "products": products}
+    context = {"sliders": sliders, "products": products, "reviews": reviews, "advantages": advantage}
     template = 'index.html'
 
     return render(request, template, context)

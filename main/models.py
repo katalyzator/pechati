@@ -50,3 +50,35 @@ class Application(models.Model):
 
     def __unicode__(self):
         return smart_unicode(self.phone)
+
+
+class Review(models.Model):
+    full_name = models.CharField(max_length=255, verbose_name='ФИО')
+    description = models.TextField(max_length=1000, verbose_name='Текст отзыва')
+    image = models.ImageField(upload_to='images/reviews', verbose_name='Картинка')
+
+    timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+
+    class Meta:
+        verbose_name_plural = 'Отзывы'
+        verbose_name = 'Отзыв'
+
+    def __unicode__(self):
+        return smart_unicode(self.full_name)
+
+
+class Advantage(models.Model):
+    title = models.CharField(max_length=255, verbose_name='Заголовок')
+    description = models.TextField(verbose_name='Описание')
+    image = models.ImageField(upload_to='images/advantages', verbose_name='Картинка')
+
+    timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+
+    class Meta:
+        verbose_name_plural = 'Премущества'
+        verbose_name = 'Объект'
+
+    def __unicode__(self):
+        return smart_unicode(self.title)

@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.contrib import admin
 
-from main.models import SliderImage, Product, Application
+from main.models import SliderImage, Product, Application, Review, Advantage
 
 admin.site.register(SliderImage)
 
@@ -22,5 +22,21 @@ class ApplicationAdmin(admin.ModelAdmin):
         model = Application
 
 
+class ReviewAdmin(admin.ModelAdmin):
+    list_display = ['full_name', 'description']
+
+    class Meta:
+        model = Review
+
+
+class AdvantageAdmin(admin.ModelAdmin):
+    list_display = ['title', 'description', 'timestamp']
+
+    class Meta:
+        model = Advantage
+
+
+admin.site.register(Advantage, AdvantageAdmin)
+admin.site.register(Review, ReviewAdmin)
 admin.site.register(Application, ApplicationAdmin)
 admin.site.register(Product, ProductAdmin)

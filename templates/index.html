@@ -30,7 +30,8 @@
                                                                                alt=""
                                                                                uk-cover="">
                                 </div>
-                                <a class="item-heading" href="{% url 'single_product' id=product.id %}">{{ product.title }}</a>
+                                <a class="item-heading"
+                                   href="{% url 'single_product' id=product.id %}">{{ product.title }}</a>
                                 <p class="desc">{{ product.description }}</p>
                                 <div class="price"><span>{{ product.price }} руб.</span></div>
                                 <a class="see-item" href="#modal-call" uk-toggle="">Заказать</a>
@@ -43,35 +44,18 @@
         </div>
         <div class="advantage">
             <div class="uk-container">
-                <h2 class="section-heading">Why you should choose us</h2>
+                <h2 class="section-heading">Почему клиенты выбирают нас?</h2>
                 <div class="uk-grid ad-grid uk-child-width-1-1 uk-grid-match uk-child-width-1-3@m">
-                    <div>
-                        <div class="ad-item">
-                            <div class="uk-cover-container ad-img"><img src="{% static 'img/png/case.png' %}" alt=""
-                                                                        uk-cover=""></div>
-                            <h3 class="ad-heading">Best quality</h3>
-                            <p class="ad-desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque,
-                                exercitationem?</p>
+                    {% for item in advantages %}
+                        <div>
+                            <div class="ad-item">
+                                <div class="uk-cover-container ad-img"><img src="{{ item.image.url }}" alt=""
+                                                                            uk-cover=""></div>
+                                <h3 class="ad-heading">{{ item.title }}</h3>
+                                <p class="ad-desc">{{ item.description }}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <div class="ad-item">
-                            <div class="uk-cover-container ad-img"><img src="{% static 'img/png/case.png' %}" alt=""
-                                                                        uk-cover=""></div>
-                            <h3 class="ad-heading">Best quality</h3>
-                            <p class="ad-desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque,
-                                exercitationem?</p>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="ad-item">
-                            <div class="uk-cover-container ad-img"><img src="{% static 'img/png/case.png' %}" alt=""
-                                                                        uk-cover=""></div>
-                            <h3 class="ad-heading">Best quality</h3>
-                            <p class="ad-desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque,
-                                exercitationem?</p>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
                 <a class="show-more order" href="#modal-call" uk-toggle="">Заказать сейчас</a>
             </div>
@@ -82,47 +66,20 @@
                 <div uk-slider="">
                     <div class="uk-position-relative uk-visible-toggle uk-light">
                         <ul class="uk-slider-items uk-grid uk-child-width-1-2@s uk-grid-match">
-                            <li>
-                                <div class="uk-card uk-card-default">
-                                    <div class="uk-card-body">
-                                        <div class="uk-cover-container img-wrapper"><img
-                                                src="{% static 'img/jpg/person1.jpg' %}"
-                                                alt=""
-                                                uk-cover=""></div>
-                                        <h3 class="uk-card-title uk-text-center">Alex Hunter</h3>
-                                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                            tempor
-                                            incididunt.</p>
+                            {% for item in reviews %}
+                                <li>
+                                    <div class="uk-card uk-card-default">
+                                        <div class="uk-card-body">
+                                            <div class="uk-cover-container img-wrapper"><img
+                                                    src="{{ item.image.url }}"
+                                                    alt=""
+                                                    uk-cover=""></div>
+                                            <h3 class="uk-card-title uk-text-center">{{ item.full_name }}</h3>
+                                            <p>{{ item.description }}</p>
+                                        </div>
                                     </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="uk-card uk-card-default">
-                                    <div class="uk-card-body">
-                                        <div class="uk-cover-container img-wrapper"><img
-                                                src="{% static 'img/jpg/person2.jpg' %}"
-                                                alt=""
-                                                uk-cover=""></div>
-                                        <h3 class="uk-card-title uk-text-center">Elena Case</h3>
-                                        <p> Lorem ip ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                            tempor incididunt.</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="uk-card uk-card-default">
-                                    <div class="uk-card-body">
-                                        <div class="uk-cover-container img-wrapper"><img
-                                                src="{% static 'img/jpg/person3.jpg' %}"
-                                                alt=""
-                                                uk-cover=""></div>
-                                        <h3 class="uk-card-title uk-text-center">Hugh Jackman</h3>
-                                        <p> Lorem ippsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                            tempor
-                                            incididunt.</p>
-                                    </div>
-                                </div>
-                            </li>
+                                </li>
+                            {% endfor %}
                         </ul>
                         <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#"
                            uk-slidenav-previous="" uk-slider-item="previous"></a><a
