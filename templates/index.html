@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% load staticfiles %}
+{% load staticfiles thumbnail %}
 
 {% block content %}
 
@@ -9,7 +9,13 @@
             <div class="uk-position-relative uk-visible-toggle uk-light">
                 <ul class="uk-slideshow-items">
                     {% for slide in sliders %}
-                        <li><img src="{{ slide.image.url }}" alt="" uk-cover=""></li>
+
+                        <li>
+                            {% thumbnail slide.image "1500x500" as im %}
+                                <img src="{{ im.url }}" alt="" uk-cover="">
+                            {% endthumbnail %}
+                        </li>
+
                     {% endfor %}
                 </ul>
                 <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous=""
