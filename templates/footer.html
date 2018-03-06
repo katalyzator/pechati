@@ -31,9 +31,9 @@
         <div class="uk-navbar-nav bottom-navbar">
             <div class="uk-navbar-left">
                 <ul class="uk-navbar-nav">
-                    <li><a class="footer-link" href="index.html">Главная</a></li>
-                    <li><a class="footer-link" href="goods.html">Товары</a></li>
-                    <li><a class="footer-link" href="contacts.html">Контакты</a></li>
+                    <li><a class="footer-link" href="{% url 'index_view' %}">Главная</a></li>
+                    <li><a class="footer-link" href="{% url 'products' %}">Товары</a></li>
+                    <li><a class="footer-link" href="{% url 'contacts_view' %}">Контакты</a></li>
                 </ul>
             </div>
             <div class="uk-navbar-right">
